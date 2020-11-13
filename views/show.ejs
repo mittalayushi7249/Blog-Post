@@ -1,0 +1,20 @@
+<%- include('partials/header') %>
+
+<div style="width: 30%;margin: 50px auto;border: 1px solid #C0C0C0;padding: 10px;">
+    <h1 style="text-align:center;"><%=foundBlog.title%></h1>
+    <div style="margin: 0px 125px;">
+        <img style="width: 100%;border-radius: 10px;" src="<%=foundBlog.image%>" >
+    </div>
+    <span><%=foundBlog.created.toDateString()%></span>
+    <p><%-foundBlog.body%></p>
+    <div class="row container">
+        <form action="/blogs/<%=foundBlog._id%>?_method=DELETE" method="POST">
+            <button class="btn btn-outline-danger">DELETE</button>
+        </form>
+        <a style="margin-left: 5px;" class="btn btn-outline-secondary" href="/blogs/<%=foundBlog._id%>/edit">EDIT</a>    
+    </div>
+
+</div>
+
+
+<%- include('partials/footer') %>

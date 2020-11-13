@@ -1,0 +1,22 @@
+
+<%- include('partials/header') %>
+<h1 style="text-align:center;">BLOG POST</h1>
+<div style="width: 30%;margin: 15px auto;border: 1px solid #C0C0C0;padding: 10px;">
+    <div class="container">
+        <% blogs.forEach(function(blog){ %>
+            <div class="row">   
+                <img style="width: 30%;" src="<%= blog.image%>" alt="">
+                <div>
+                    <h2><%= blog.title%></h2>
+                    <span><%= blog.created.toDateString()%></span>
+                    <p><%= blog.body.substring(0,100)%>...</p>
+                    <p><a class="btn btn-outline-info" href="/blogs/<%=blog._id%>">Read More <strong>></strong></a></p>
+                    
+                </div>
+            </div>
+            <hr>
+            <% });  %> 
+    </div>   
+</div>
+  
+<%- include('partials/footer') %>
